@@ -1,5 +1,4 @@
-#page=$(cat "test.html" | tidy -asxhtml -numeric 2> /dev/null)
-basket=$(seq 28000 28029 | sed ':a;N;$!ba;s/\n/%7C/g')
+basket=$(seq "$1" "$2" | sed ':a;N;$!ba;s/\n/%7C/g')
 page=$(echo "www.citaten.net	FALSE	/	FALSE	0	citatennet	citatenmandje=%7C$basket%7C" | wget -q -S --load-cookies=/dev/stdin -O - "http://www.citaten.net/zoeken/citaten_in_mandje.html" 2>/dev/null | tidy -asxhtml -numeric 2> /dev/null)
 uls=$(echo "$page" | xmllint --html --xpath '//ul[@id="citatenrijen"]' - 2>/dev/null)
 ncts=$(echo "$uls" | xmllint --html --xpath 'count(//ul/li)' - 2>/dev/null)
@@ -19,7 +18,6 @@ do
 	orig=$(echo "$citi" | xmllint --html --xpath 'normalize-space(//div[@class="citatenlijst-oorspronkelijk"]/p[not(@*)])' - 2>/dev/null | sed 's/^Origineel\W*//')
 	srce=$(echo "$citi" | xmllint --html --xpath 'normalize-space(//div[@class="citatenlijst-oorspronkelijk"]/p[@class="bron-citaat"])' - 2>/dev/null | sed 's/^Bron\W*//')
 	
-#	echo "$citi"
 	if [ ! -z "$ciid" ]
 	then
 		echo "'$ciid','$auth','$gebs','$desc','$quot','$orig','$srce'"
