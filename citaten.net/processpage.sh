@@ -1,3 +1,4 @@
+#!/bin/bash
 basket=$(seq "$1" "$2" | sed ':a;N;$!ba;s/\n/%7C/g')
 page=$(echo "www.citaten.net	FALSE	/	FALSE	0	citatennet	citatenmandje=%7C$basket%7C" | wget -q -S --load-cookies=/dev/stdin -O - "http://www.citaten.net/zoeken/citaten_in_mandje.html" 2>/dev/null | tidy -asxhtml -numeric 2> /dev/null)
 uls=$(echo "$page" | xmllint --html --xpath '//ul[@id="citatenrijen"]' - 2>/dev/null)

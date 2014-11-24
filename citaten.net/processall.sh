@@ -1,3 +1,4 @@
+#!/bin/bash
 frm=0
 tom=29
 while true
