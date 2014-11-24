@@ -6,7 +6,7 @@ A repository that contains various scripts to scrape data from public websites t
 
 ## Statement
 
-*Many websites provide useful data. The only problem is that the data is not accessible by machines. This is problematic since most applications require to interact with multiple databases. This repository does not intend theft of copyrighted material: the data was already available. It shows however ways to produce them in a machine-readable format.*
+*Many websites provide useful data. The only problem is that the data is not accessible by machines. This is problematic since most applications require to interact with multiple databases. This repository does not intend theft of copyrighted material: the data was already available. It shows however ways to produce them in a machine-readable format.  **Public data should be open!***
 
 This repository aims to do something about it by providing a tool set of scrapers (as well as documentation), to scrape data from websites.
 
