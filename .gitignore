@@ -3,6 +3,9 @@
 *.*~*
 *.bak
 
+#Retrieved data
+*.dat
+
 #Binaries
 *.pdf
 *.htm*
