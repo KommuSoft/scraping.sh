@@ -1,0 +1,3 @@
+[submodule "jsli"]
+	path = jsli
+	url = https://github.com/mazko/jsli.git
