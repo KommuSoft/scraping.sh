@@ -9,4 +9,6 @@
 #Binaries
 *.pdf
 *.htm*
-
+*.xml
+*.sql
+*.dump
